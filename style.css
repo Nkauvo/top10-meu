@@ -1,0 +1,171 @@
+/* ================================= */
+/* 🌈 FUNDO MODERNO E SUAVE          */
+/* ================================= */
+
+body{
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 2.5rem;
+  background: radial-gradient(circle at top, #1e40af 0%, #0f172a 40%, #0a0f1f 100%);
+  color: #f1f5f9;
+  overflow-x: hidden;
+}
+
+/* ================================= */
+/* 🌟 TÍTULO                         */
+/* ================================= */
+
+h1{
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #00eaff, #7c3aed);
+  background-clip: text;
+  color: transparent;
+}
+
+/* ================================= */
+/* 📦 GRID                           */
+/* ================================= */
+
+.grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 2rem;
+}
+
+/* ================================= */
+/* 💎 CARD GLASS + BORDA NEON        */
+/* ================================= */
+
+.card{
+  background: rgba(255,255,255,0.08);
+  border-radius: 20px;
+  padding: 1rem;
+  backdrop-filter: blur(18px) saturate(160%);
+  border: 1px solid rgba(255,255,255,0.25);
+
+  position: relative;
+  overflow: hidden;
+
+  transition: transform .25s ease, box-shadow .3s ease;
+}
+
+.card:hover{
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 0 35px rgba(0,0,0,0.4);
+}
+
+.card::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, #00eaff, #7c3aed, #ff2e93, #00eaff);
+  background-size: 300%;
+  animation: neon 7s linear infinite;
+
+  mask: 
+    linear-gradient(#000 0 0) content-box, 
+    linear-gradient(#000 0 0);
+  mask-composite: xor;
+}
+
+@keyframes neon{
+  0%{ background-position: 0% 50%; }
+  50%{ background-position: 100% 50%; }
+  100%{ background-position: 0% 50%; }
+}
+
+/* ================================= */
+/* 🎬 VIDEO                          */
+/* ================================= */
+
+.video-wrap{
+  position: relative;
+  padding-top: 56.25%;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.video-wrap iframe{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* ================================= */
+/* 🏷 META                           */
+/* ================================= */
+
+.meta{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: .5rem;
+}
+
+.title{
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+/* BADGE */
+.badge{
+  background: #7c3aed;
+  padding: .35rem .9rem;
+  border-radius: 999px;
+  font-size: .8rem;
+  color: white;
+  font-weight: 700;
+}
+
+/* ================================= */
+/* 📄 DESCRIÇÃO                      */
+/* ================================= */
+
+.desc{
+  font-size: .9rem;
+  margin-top: .5rem;
+  opacity: 0.8;
+}
+
+/* ================================= */
+/* 🌟 ÍCONES FLUTUANDO (sem JS)      */
+/* ================================= */
+
+.floating-icons div{
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  opacity: 0.15;
+  animation: float 9s infinite ease-in-out alternate;
+}
+
+.ball{
+  background: url("https://cdn-icons-png.flaticon.com/512/833/833314.png") center/cover;
+  top: 15%;
+  left: 10%;
+}
+
+.star{
+  background: url("https://cdn-icons-png.flaticon.com/512/1828/1828884.png") center/cover;
+  bottom: 20%;
+  right: 15%;
+  animation-duration: 12s;
+}
+
+.note{
+  background: url("https://cdn-icons-png.flaticon.com/512/727/727245.png") center/cover;
+  top: 50%;
+  right: 30%;
+  animation-duration: 10s;
+}
+
+@keyframes float {
+  0%{ transform: translateY(0); }
+  100%{ transform: translateY(-22px); }
+}
